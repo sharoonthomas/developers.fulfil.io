@@ -36,6 +36,6 @@ Fulfil's API.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contents:
+   :caption: Guides:
 
    guides/index

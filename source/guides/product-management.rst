@@ -6,6 +6,8 @@ Because product information is also organized around multiple models, this
 guide explains the organization or product data.
 
 .. contents:: In this guide
+   :local:
+   :depth: 1
 
 Product information resources
 -----------------------------

@@ -44,7 +44,7 @@ extensions = [
     'sphinx.ext.githubpages',
 
     # Multi language code examples
-    'sphinxcontrib.osexample',
+    #'sphinxcontrib.osexample',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -91,8 +91,8 @@ html_theme_options = {
     'logo': 'images/logo.png',
     'logo_name': False,
 
-    'font_family': "'Lora', serif",
-    'head_font_family': "'Ubuntu', sans-serif",
+    #'font_family': "'Lora', serif",
+    #'head_font_family': "'Ubuntu', sans-serif",
     #'github_user': 'bitprophet',
     #'github_repo': 'alabaster',
 }
@@ -102,9 +102,11 @@ html_theme_options = {
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = [
     '_static',
-    '_static/custom.css',
     '_static/images/*',
 ]
+
+def setup(app):
+    app.add_stylesheet('fulfil.css')
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.

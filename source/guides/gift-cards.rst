@@ -7,6 +7,8 @@ not need this if you're using an e-commerce platform like Shopify that already
 implements Gift Cards natively.
 
 .. contents:: In this guide
+   :local:
+   :depth: 1
 
 How it works
 ------------
@@ -183,6 +185,7 @@ To query the current status of a gift card, you can use the gift card api.
             'amount_available',  # the amount still remaining on gift card
         ]
     )
+
 Updating the gift card
 ``````````````````````````````
 

@@ -1,4 +1,4 @@
-Development Quickstart
+Quickstart
 ======================
 
 Get up and running with our API libraries and start developing your Fulfil integration.
@@ -7,6 +7,8 @@ Integrating Fulfil into your app can begin as soon as you create a Fulfil accoun
 reqiring only three steps.
 
 .. contents::
+   :local:
+   :depth: 1
 
 Step 1: Obtain your API keys
 ----------------------------
@@ -16,7 +18,7 @@ not include your key when making an API request, or use one that is incorrect or
 Fulfil returns an error.
 
 
-.. warning:: 
+.. attention:: 
 
    Treat the API key and password like you would any other password,
    since whoever has access to these credentials has full API access
@@ -29,11 +31,10 @@ Step 2: Install an API library
 We provide an official library for Python. Unofficial libraries are available for
 other languages and platforms.
 
-.. example-code::
 
-   .. code-block:: python
+.. code-block:: python
 
-      pip install fulfil-client
+   pip install fulfil-client
 
 
 Step 3: Make a test API request
@@ -42,19 +43,17 @@ Step 3: Make a test API request
 To check that your integration is working correctly, make a test API request 
 using your API key to get your preferences.
 
-.. example-code::
+.. code-block:: python
 
-   .. code-block:: python
+   from fulfil_client import Client
+   fulfil = Client('demo', 'YOUR_API_KEY')
+   Product = fulfil.model('product.product')
 
-      from fulfil_client import Client
-      fulfil = Client('demo', 'YOUR_API_KEY')
-      Product = fulfil.model('product.product')
+   # Search for products
+   product_ids = Product.search([], None, 1)
 
-      # Search for products
-      product_ids = Product.search([], None, 1)
-
-      # Read the products
-      products = Product.read(product_ids, ['code'])
+   # Read the products
+   products = Product.read(product_ids, ['code'])
 
 Fulfil returns an array of objects with the code and id of the products
 

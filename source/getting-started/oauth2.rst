@@ -7,50 +7,41 @@ resources in the REST API. This guide will walk you through the
 authorization process (described in greater detail by the  `OAuth 2.0
 specification`_).
 
-.. _toc:
-
-In this article:
-~~~~~~~~~~~~~~~~
-
--  `Terminology`_
--  `Step 1: Get the client's credentials`_
--  `Step 2: Ask for permission`_
--  `Step 3: Confirm installation`_
--  `Step 4: Making authenticated requests`_
--  `API Access modes`_
-
---------------
+.. contents:: In this guide
+   :local:
+   :depth: 1
 
 Terminology
-~~~~~~~~~~~
+--------------
 
 Before getting into the nitty-gritty of the authorization process, let’s
 go over some of the terms that we’ll be using for the rest of the guide.
 
--  **Client**
+**Client**
+
    Any application that would like access to a Fulfil account's data. A
    user (usually the customer's administration users) must grant
    permission before the client can access any data.
--  **API**
+
+**API**
+
    Fulfil's REST API. This is the place where the client can view and
    modify data.
--  **User**
+
+**User**
+
    A Fulfil account holder, usually an administrator of a Fulfil
    customer. This is the person giving permission to a client to access
    their data through the REST API.
 
---------------
-
-
-.. _get-credentials:
 
 Step 1: Get the client's credentials
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------
 
 You will need to retrieve an API Key and Secret Key as the client uses
 them to identify itself during the authorization process.
 
-**To retrieve the credentials:**
+To retrieve the credentials:
 
 #. Open the \ **Apps** section of Fulfil \ `authentication dashboard`_.
 #. Click the name of the app to view its details.
@@ -60,12 +51,8 @@ them to identify itself during the authorization process.
    key.
 
 
---------------
-
-.. _ask-permission:
-
 Step 2: Ask for permission
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------
 
 The first step of process is to get authorization from the user. This is
 done by displaying a prompt provided by Fulfil:
@@ -95,19 +82,18 @@ With these substitutions made:
    the one you provided during authorization. This mechanism is
    important for \ `the security of your application`_.
 
---------------
-
-.. _confirm-installation:
 
 Step 3: Confirm installation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------
 
 When the user clicks the  *Install* button in the prompt, they will be
 redirected to the client server as specified above. One of the
 parameters passed in the confirmation redirect is the \ *Authorization
 Code* (the other parameters will be covered later in the guide).
 
-https://example.com/authorized?state=state&code=authorization_code
+::
+
+   https://example.com/authorized?state=state&code=authorization_code
 
 Before you proceed, make sure your application checks that the provided 
 *nonce* is the same one that your application provided to Fulfil during
@@ -117,7 +103,7 @@ process.
 
 **Exchange the authorization code for an access token**
 
-::
+.. code-block:: HTTP
 
    POST https://{subdomain}.fulfil.io/oauth/token
 
@@ -137,7 +123,7 @@ request:
 You'll receive a JSON response containing an access_token (among other
 details):
 
-.. code:: json
+.. code-block:: json
 
    {
      "access_token": "user-xxxxx-xxxxxxx", 
@@ -166,7 +152,7 @@ details):
 
 
 Headless applications
-`````````````````````
+------------------------------------
 
 Headless applications that need an offline token should get one with
 an offline generation script and then use the exchanged token.
