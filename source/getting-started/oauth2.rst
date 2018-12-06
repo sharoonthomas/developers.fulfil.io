@@ -43,7 +43,7 @@ them to identify itself during the authorization process.
 
 To retrieve the credentials:
 
-#. Open the \ **Apps** section of Fulfil \ `authentication dashboard`_.
+#. Open the **Apps** section of Fulfil `authentication dashboard <https://auth.fulfil.io/user/clients>`_.
 #. Click the name of the app to view its details.
 #. Click \ **Get API Credentials** and scroll down to \ **App
    Credentials**. The Client ID is displayed for you, and you can
