@@ -6,4 +6,5 @@
 
    product-management
    managing-shipments
+   managing-inventory
    gift-cards

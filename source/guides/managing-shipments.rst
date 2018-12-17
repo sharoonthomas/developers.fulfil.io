@@ -166,6 +166,7 @@ queue. This avoids two pickers picking the same shipment.
 
    curl 'https://{merchant}.fulfil.io/api/{version}/model/stock.shipment.out/start_picking' 
       -H 'X-API-KEY: {your-api-key}' 
+      -X PUT
       -d '[SHIPMENT_ID1,SHIPMENT_ID2]'
 
 .. code-block:: python
@@ -196,7 +197,8 @@ person to pack.
 .. code-block:: shell
 
    curl 'https://{merchant}.fulfil.io/api/{version}/model/stock.shipment.out/done_picking' 
-      -H 'X-API-KEY: {your-api-key}' 
+      -X PUT
+      -H 'X-API-KEY: {your-api-key}'
       -d '[SHIPMENT_ID1,SHIPMENT_ID2]'
 
 .. code-block:: python
@@ -239,6 +241,7 @@ teams can stop accepting changes to a shipment.
 
    curl 'https://{merchant}.fulfil.io/api/{version}/model/stock.shipment.out/pack' 
       -H 'X-API-KEY: {your-api-key}' 
+      -X PUT
       -d '[SHIPMENT_ID1,SHIPMENT_ID2]'
 
 .. code-block:: python
@@ -272,6 +275,7 @@ to auto-create packages for you.
 
    curl 'https://{merchant}.fulfil.io/api/{version}/model/stock.shipment.out/shipping_app_add_remove_packages' 
       -H 'X-API-KEY: {your-api-key}' 
+      -X PUT
       -d '[SHIPMENT_ID, PACKAGES]'
 
 .. code-block:: python
