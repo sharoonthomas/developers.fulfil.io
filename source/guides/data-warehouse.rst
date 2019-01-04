@@ -66,54 +66,52 @@ Table Name: `dw_sale_line`
 
 **Columns**
 
-.. code-block::
-
-    ┌───────────────────────────────┬────────────────────────────────┬───────────┐
-    │            Column             │              Type              │ *         │ 
-    ├───────────────────────────────┼────────────────────────────────┼───────────┤
-    │ id                            │ integer                        │           │
-    │ quantity                      │ double precision               │           │
-    │ line_type                     │ character varying              │           │
-    │ amount                        │ double precision               │           │
-    │ gross_profit_cpny_ccy_cache   │ numeric                        │           │
-    │ cost_price_cpny_ccy_cache     │ numeric                        │           │
-    │ untaxed_amount_cpny_ccy_cache │ numeric                        │           │
-    │ sale_id                       │ integer                        │           │
-    │ sale_reference                │ character varying              │           │
-    │ sale_number                   │ character varying              │           │
-    │ sale_date                     │ date                           │           │
-    │ confirmation_time             │ timestamp(0) without time zone │           │
-    │ state                         │ character varying              │           │
-    │ price_list                    │ character varying              │           │
-    │ shipment_address_name         │ character varying              │           │
-    │ shipment_address_line1        │ character varying              │           │
-    │ shipment_address_line2        │ character varying              │           │
-    │ shipment_address_city         │ character varying              │           │
-    │ shipment_address_zip          │ character varying              │           │
-    │ currency                      │ character varying(3)           │           │
-    │ product_code                  │ character varying              │           │
-    │ product_name                  │ character varying              │           │
-    │ product_category              │ character varying              │           │
-    │ product_unit_weight           │ double precision               │           │
-    │ brand                         │ character varying              │           │
-    │ party_name                    │ character varying              │           │
-    │ current_account_manager       │ character varying              │           │
-    │ current_sales_rep             │ character varying              │           │
-    │ invoice_country_code          │ character varying(2)           │           │
-    │ invoice_country_name          │ character varying              │           │
-    │ invoice_region_code           │ character varying              │           │
-    │ invoice_region_name           │ character varying              │           │
-    │ shipment_country_code         │ character varying(2)           │           │
-    │ shipment_country_name         │ character varying              │           │
-    │ shipment_region_code          │ character varying              │           │
-    │ shipment_region_name          │ character varying              │           │
-    │ channel_code                  │ character varying              │           │
-    │ channel_name                  │ character varying              │           │
-    │ sales_person_name             │ character varying              │           │
-    │ warehouse                     │ character varying              │           │
-    │ return_reason                 │ character varying              │           │
-    │ note                          │ character varying              │           │
-    └───────────────────────────────┴────────────────────────────────┴───────────┘
+=============================== ==============================================
+            Column                           Type                         
+=============================== ==============================================
+ id                             integer                                   
+ quantity                       double precision                          
+ line_type                      character varying                         
+ amount                         double precision                          
+ gross_profit_cpny_ccy_cache    numeric                                   
+ cost_price_cpny_ccy_cache      numeric                                   
+ untaxed_amount_cpny_ccy_cache  numeric                                   
+ sale_id                        integer                                   
+ sale_reference                 character varying                         
+ sale_number                    character varying                         
+ sale_date                      date                                      
+ confirmation_time              timestamp(0) without time zone            
+ state                          character varying                         
+ price_list                     character varying                         
+ shipment_address_name          character varying                         
+ shipment_address_line1         character varying                         
+ shipment_address_line2         character varying                         
+ shipment_address_city          character varying                         
+ shipment_address_zip           character varying                         
+ currency                       character varying(3)                      
+ product_code                   character varying                         
+ product_name                   character varying                         
+ product_category               character varying                         
+ product_unit_weight            double precision                          
+ brand                          character varying                         
+ party_name                     character varying                         
+ current_account_manager        character varying                         
+ current_sales_rep              character varying                         
+ invoice_country_code           character varying(2)                      
+ invoice_country_name           character varying                         
+ invoice_region_code            character varying                         
+ invoice_region_name            character varying                         
+ shipment_country_code          character varying(2)                      
+ shipment_country_name          character varying                         
+ shipment_region_code           character varying                         
+ shipment_region_name           character varying                         
+ channel_code                   character varying                         
+ channel_name                   character varying                         
+ sales_person_name              character varying                         
+ warehouse                      character varying                         
+ return_reason                  character varying                         
+ note                           character varying                         
+=============================== ==============================================
 
 Return Shipments
 ````````````````
@@ -124,42 +122,40 @@ Table Name: `dw_stock_shipment_out_return`
 
 **Columns**
 
-.. code-block::
-
-    ┌───────────────────────────────┬──────────────────────┬───────────┐
-    │            Column             │         Type         │ Modifiers │
-    ├───────────────────────────────┼──────────────────────┼───────────┤
-    │ return_id                     │ integer              │           │
-    │ return_ref                    │ character varying    │           │
-    │ return_state                  │ character varying    │           │
-    │ carrier                       │ character varying    │           │
-    │ return_shipment_cost          │ numeric              │           │
-    │ return_shipment_cost_currency │ character varying(3) │           │
-    │ shelved_date                  │ date                 │           │
-    │ planned_date                  │ date                 │           │
-    │ quantity                      │ double precision     │           │
-    │ cost_price                    │ numeric              │           │
-    │ sale_unit_price               │ numeric              │           │
-    │ order_id                      │ integer              │           │
-    │ order_reference               │ character varying    │           │
-    │ order_number                  │ character varying    │           │
-    │ order_date                    │ date                 │           │
-    │ order_state                   │ character varying    │           │
-    │ currency                      │ character varying(3) │           │
-    │ product_code                  │ character varying    │           │
-    │ product_name                  │ character varying    │           │
-    │ product_template_name         │ character varying    │           │
-    │ product_category              │ character varying    │           │
-    │ party_name                    │ character varying    │           │
-    │ invoice_country_code          │ character varying(2) │           │
-    │ invoice_country_name          │ character varying    │           │
-    │ invoice_region_code           │ character varying    │           │
-    │ invoice_region_name           │ character varying    │           │
-    │ shipment_country_code         │ character varying(2) │           │
-    │ shipment_country_name         │ character varying    │           │
-    │ shipment_region_code          │ character varying    │           │
-    │ shipment_region_name          │ character varying    │           │
-    └───────────────────────────────┴──────────────────────┴───────────┘
+=============================== ==============================================
+            Column                      Type           
+=============================== ==============================================
+ return_id                      integer                         
+ return_ref                     character varying               
+ return_state                   character varying               
+ carrier                        character varying               
+ return_shipment_cost           numeric                         
+ return_shipment_cost_currency  character varying(3)            
+ shelved_date                   date                            
+ planned_date                   date                            
+ quantity                       double precision                
+ cost_price                     numeric                         
+ sale_unit_price                numeric                         
+ order_id                       integer                         
+ order_reference                character varying               
+ order_number                   character varying               
+ order_date                     date                            
+ order_state                    character varying               
+ currency                       character varying(3)            
+ product_code                   character varying               
+ product_name                   character varying               
+ product_template_name          character varying               
+ product_category               character varying               
+ party_name                     character varying               
+ invoice_country_code           character varying(2)            
+ invoice_country_name           character varying               
+ invoice_region_code            character varying               
+ invoice_region_name            character varying               
+ shipment_country_code          character varying(2)            
+ shipment_country_name          character varying               
+ shipment_region_code           character varying               
+ shipment_region_name           character varying               
+=============================== ==============================================
 
 Invoice Lines
 ``````````````
@@ -177,36 +173,34 @@ Table Name: `dw_account_invoice_line`
 
 **Columns**
 
-.. code-block::
-
-    ┌───────────────────────┬──────────────────────┬───────────┐
-    │        Column         │         Type         │ Modifiers │
-    ├───────────────────────┼──────────────────────┼───────────┤
-    │ id                    │ integer              │           │
-    │ quantity              │ double precision     │           │
-    │ amount                │ double precision     │           │
-    │ invoice_id            │ integer              │           │
-    │ invoice_reference     │ character varying    │           │
-    │ invoice_number        │ character varying    │           │
-    │ invoice_date          │ date                 │           │
-    │ type                  │ character varying    │           │
-    │ account_code          │ character varying    │           │
-    │ account_name          │ character varying    │           │
-    │ invoice_address_name  │ character varying    │           │
-    │ invoice_address_line1 │ character varying    │           │
-    │ invoice_address_line2 │ character varying    │           │
-    │ invoice_address_city  │ character varying    │           │
-    │ invoice_address_zip   │ character varying    │           │
-    │ currency              │ character varying(3) │           │
-    │ product_code          │ character varying    │           │
-    │ product_name          │ character varying    │           │
-    │ product_category      │ character varying    │           │
-    │ party_name            │ character varying    │           │
-    │ invoice_country_code  │ character varying(2) │           │
-    │ invoice_country_name  │ character varying    │           │
-    │ invoice_region_code   │ character varying    │           │
-    │ invoice_region_name   │ character varying    │           │
-    └───────────────────────┴──────────────────────┴───────────┘
+=============================== ==============================================
+        Column                  Type           
+=============================== ==============================================
+ id                             integer                         
+ quantity                       double precision                
+ amount                         double precision                
+ invoice_id                     integer                         
+ invoice_reference              character varying               
+ invoice_number                 character varying               
+ invoice_date                   date                            
+ type                           character varying               
+ account_code                   character varying               
+ account_name                   character varying               
+ invoice_address_name           character varying               
+ invoice_address_line1          character varying               
+ invoice_address_line2          character varying               
+ invoice_address_city           character varying               
+ invoice_address_zip            character varying               
+ currency                       character varying(3)            
+ product_code                   character varying               
+ product_name                   character varying               
+ product_category               character varying               
+ party_name                     character varying               
+ invoice_country_code           character varying(2)            
+ invoice_country_name           character varying               
+ invoice_region_code            character varying               
+ invoice_region_name            character varying               
+=============================== ==============================================
 
 Limitations
 -----------
